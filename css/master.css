@@ -1,0 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+
+}
+
+#canvasWrapper {
+  width: 100%;
+  height: 100%;
+}
+
+#myCanvas {
+  background-color: black;
+  display: block;
+  margin: auto;
+}
