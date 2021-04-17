@@ -33,9 +33,6 @@ const onKeydown = (e) => {
     if (keyboard1.currentPressed === "ESC") {
         game.state = "INITIAL";
         UI.classList.add("visible");
-    } else if (keyboard1.currentPressed === "F") {
-        //document.querySelector("body").classList.toggle("fullscreen");
-        //game.toggleFullScreen();
     }
 };
 
