@@ -1,19 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <script type="module" src="js/Keyboard.js" defer></script>
-    <script type="module" src="js/Player.js" defer></script>
-    <script type="module" src="js/Ball.js" defer></script>
-    <script type="module" src="js/main.js" defer></script>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+            rel="stylesheet"
+        />
+        <script type="module" src="js/Keyboard.js" defer></script>
+        <script type="module" src="js/Player.js" defer></script>
+        <script type="module" src="js/Ball.js" defer></script>
+        <script type="module" src="js/main.js" defer></script>
 
-    <title>Pong</title>
-  </head>
-  <body>
-      <div id="canvas--wrapper">
-        <canvas id="canvas"></canvas>
-      </div>
-    </div>
-  </body>
+        <title>Pong</title>
+    </head>
+    <body>
+        <h1>PONG</h1>
+        <div id="canvas--wrapper">
+            <div id="ui" class="visible">
+                <button class="selected" value="computer">
+                    <span>VS COMPUTER</span>
+                </button>
+
+                <button value="player">
+                    <span>VS PLAYER</span>
+                </button>
+
+                <div class="instructions">
+                    <span>How to play</span>
+                    <span>Player 1 - UP / DOWN</span>
+                    <span>Player 2 - W / S</span>
+                    <span>ESC to return</span>
+                </div>
+            </div>
+            <canvas id="canvas" height="600" width="720"></canvas>
+        </div>
+    </body>
 </html>

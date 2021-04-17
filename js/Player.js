@@ -1,25 +1,23 @@
 class Player {
-    constructor(game, isHuman, keyboard) {
-        this.left = isHuman;
-        this.keyboard = keyboard;
+    constructor(game, left, isHuman, keyboard) {
         this.game = game;
+        this.left = left;
+        this.width = 15;
         this.height = 70;
-        this.width = 10;
-        this.score = 0;
 
-        if (this.left) {
-            this.x = 50;
-            this.y = this.game.halfHeight - this.height / 2;
-            this.speed = 6;
-        } else {
-            this.x = canvas.width - 50;
-            this.y = this.game.halfHeight - this.height / 2;
-            this.speed = 8;
-        }
+        this.x = this.left ? 50 : canvas.width - 50;
+        this.y = this.game.halfHeight - this.height / 2;
+
+        this.isHuman = isHuman;
+        this.keyboard = keyboard;
+
+        this.score = 0;
+        this.speed = isHuman ? 6 : 8;
+        this.computerAccuracy = 25;
     }
 
     update(ball) {
-        this.left ? this.checkInput() : this.followBall(ball);
+        this.isHuman ? this.checkInput() : this.followBall(ball);
     }
 
     draw(ctx) {
@@ -27,31 +25,38 @@ class Player {
     }
 
     checkInput() {
-        if (
-            this.keyboard.currentPressed === "DOWN" &&
-            this.y <= this.game.height - this.height - this.game.offset
-        ) {
-            this.y += this.speed;
-        } else if (
-            this.keyboard.currentPressed === "UP" &&
-            this.y >= 0 + this.game.offset
-        ) {
+        const key = this.keyboard.currentPressed;
+        if (key === "DOWN") {
+            this.moveDown();
+        } else if (key === "UP") {
+            this.moveUp();
+        }
+    }
+
+    moveUp() {
+        if (this.y > 0) {
             this.y -= this.speed;
+        }
+    }
+
+    moveDown() {
+        if (this.y <= this.game.height - this.height) {
+            this.y += this.speed;
         }
     }
 
     followBall(ball) {
-        if (this.y + this.height / 2 - ball.y > 0 && this.y >= 0) {
-            this.y -= this.speed;
+        if (this.y + this.height / 2 - ball.y - this.computerAccuracy > 0) {
+            this.moveUp();
         } else if (
-            this.y + this.height / 2 - ball.y < 0 &&
-            this.y <= this.game.height - this.height
+            this.y + this.height / 2 - ball.y + this.computerAccuracy <
+            0
         ) {
-            this.y += this.speed;
+            this.moveDown();
         }
     }
 
-    reset() {
+    resetPosition() {
         this.y = this.game.halfHeight - this.height / 2;
     }
 }

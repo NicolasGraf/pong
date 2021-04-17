@@ -6,8 +6,8 @@ I feel like Pong is something every developer, especially one that enjoys videog
 
 ### Todo
 
--   Verstehen
--   Refactoren
+-   Verstehen (x)
+-   Refactoren (x)
 -   Start- und End-Screen
--   Auswahl ob Computer oder Hot Seat
--   KI verbessern
+-   Auswahl ob Computer oder Hot Seat (X)
+-   KI verbessern (X)
