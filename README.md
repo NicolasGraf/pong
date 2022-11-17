@@ -16,4 +16,4 @@ I feel like Pong is something every developer, especially one that enjoys videog
 -   Fullscreen 
 
 
-Last Updated on 17.11 18:12
+Last Updated not never, but on 17.11 18:12
