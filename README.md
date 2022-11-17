@@ -13,4 +13,7 @@ I feel like Pong is something every developer, especially one that enjoys videog
 -   Start- and End-Screen (/)
 -   Computer or Hot Seat (X)
 -   Improve AI (X)
--   Fullscreen
+-   Fullscreen 
+
+
+Last Updated on 17.11 18:12
